@@ -14,7 +14,7 @@ export const DesktopHeader: React.FC<{ children?: React.ReactNode }> = ({
               href="#"
               className="flex items-center justify-center w-full h-full p-4"
             >
-              <span>Home</span>
+              <span className="text-primary">Home</span>
             </Link>
           </li>
           <li className="flex items-center justify-center">
@@ -22,7 +22,7 @@ export const DesktopHeader: React.FC<{ children?: React.ReactNode }> = ({
               href="#"
               className="flex items-center justify-center w-full h-full p-4"
             >
-              <span>Home</span>
+              <span className="text-primary">Home</span>
             </Link>
           </li>
           <li className="flex items-center justify-center">
@@ -30,7 +30,7 @@ export const DesktopHeader: React.FC<{ children?: React.ReactNode }> = ({
               href="#"
               className="flex items-center justify-center w-full h-full p-4"
             >
-              <span>Home</span>
+              <span className="text-primary">Home</span>
             </Link>
           </li>
           <li className="flex items-center justify-center">
@@ -38,7 +38,7 @@ export const DesktopHeader: React.FC<{ children?: React.ReactNode }> = ({
               href="#"
               className="flex items-center justify-center w-full h-full p-4"
             >
-              <span>Home</span>
+              <span className="text-primary">Home</span>
             </Link>
           </li>
         </ul>
