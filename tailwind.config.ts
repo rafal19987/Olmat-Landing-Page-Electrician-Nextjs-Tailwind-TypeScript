@@ -10,9 +10,14 @@ const config: Config = {
     extend: {
       fontFamily: {
         lato: ['var(--font-lato)'],
+        jura: ['var(--font-jura)'],
       },
       rotate: {
         '225': '225deg',
+      },
+      colors: {
+        primary: '#022B3A',
+        secondary: '#E1E5F2',
       },
     },
   },
