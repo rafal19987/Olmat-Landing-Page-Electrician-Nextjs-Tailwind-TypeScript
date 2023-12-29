@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { lato } from '@/lib/fonts';
+import { Header } from '@/components/shared-structures/header';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,7 +16,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pl">
-      <body className={lato.variable}>{children}</body>
+      <body className={lato.variable}>
+        <div className="font-lato relative flex flex-col w-screen min-h-screen h-full bg-slate-100">
+          <div className="fixed top-0 w-full h-full">
+            <Header />
+          </div>
+
+          <div className="flex grow flex-col h-full items-center w-full">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
