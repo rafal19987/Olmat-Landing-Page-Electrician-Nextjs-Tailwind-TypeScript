@@ -17,12 +17,12 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={lato.variable}>
-        <div className="font-lato relative flex flex-col w-screen min-h-screen h-full bg-slate-100">
-          <div className="fixed top-0 w-full h-full">
+        <div className="font-lato relative flex flex-col w-screen min-h-screen h-full bg-slate-100 lg:flex-row">
+          <div className="fixed top-0 w-full h-full lg:w-64 lg:flex lg:static">
             <Header />
           </div>
 
-          <div className="flex grow flex-col h-full items-center w-full">
+          <div className="flex grow flex-col h-full items-center w-full lg:min-h-screen lg:h-full">
             {children}
           </div>
         </div>
