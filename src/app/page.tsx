@@ -276,7 +276,7 @@ const RealizationsSection = () => {
   );
 };
 
-export const ContactSection = () => {
+const ContactSection = () => {
   return (
     <section className="p-4">
       <div className="space-y-8">
