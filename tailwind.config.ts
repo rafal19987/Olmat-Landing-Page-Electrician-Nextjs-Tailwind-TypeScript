@@ -7,7 +7,19 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        lato: ['var(--font-lato)'],
+        jura: ['var(--font-jura)'],
+      },
+      rotate: {
+        '225': '225deg',
+      },
+      colors: {
+        primary: '#022B3A',
+        secondary: '#E1E5F2',
+      },
+    },
   },
   plugins: [],
 };
