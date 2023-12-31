@@ -3,7 +3,7 @@ import { DesktopHeader } from './DesktopHeader';
 
 export const Header = () => {
   return (
-    <header className="px-4 w-screen h-[var(--header-height)] lg:px-0 lg:h-screen bg-primary text-secondary">
+    <header className="px-4 w-screen h-[var(--header-height)] lg:px-0 lg:h-screen bg-primary text-secondary lg:bg-secondary">
       <MobileHeader />
       <DesktopHeader />
     </header>
