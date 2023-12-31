@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { lato, jura } from '@/lib/fonts';
 import { Header } from '@/components/shared-structures/header';
+import { Footer } from '@/components/shared-structures/footer';
 import { TailwindIndicator } from '@/components/TailwindIndicator';
 import './globals.css';
 
@@ -29,6 +30,7 @@ export default function RootLayout({
             </main>
           </div>
           <TailwindIndicator />
+          <Footer />
         </div>
       </body>
     </html>
