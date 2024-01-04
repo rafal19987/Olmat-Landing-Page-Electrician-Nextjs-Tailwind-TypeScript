@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import { lato, jura } from '@/lib/fonts';
+import { websiteConfig } from '@/websiteConfig';
 import { Header } from '@/components/shared-structures/header';
 import { Footer } from '@/components/shared-structures/footer';
 import { TailwindIndicator } from '@/components/TailwindIndicator';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'OLMAT | Mateusz Olifirowicz',
-  description:
-    'Usługi elektryczne Mateusz Olifirowicz "OLMAT". Kompensacja mocy biernej.',
+  title: websiteConfig.title,
+  description: websiteConfig.description,
 };
 
 export default function RootLayout({
