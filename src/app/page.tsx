@@ -1,111 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
-
-// images
+import { websiteConfig } from '@/websiteConfig';
 import mainPhoto from '@/assets/images/main-photo.jpg';
-import firstPhoto from '@/assets/images/1.png';
-import secondPhoto from '@/assets/images/2.png';
-import thirdPhoto from '@/assets/images/3.png';
-import profilePhoto from '@/assets/images/mateusz-olifirowicz-profile.png';
-
-// icons
 import rightArrowIcon from '@/assets/svg/right-arrow.svg';
-import workerIcon from '@/assets/svg/worker.svg';
-import voltmeterIcon from '@/assets/svg/voltmeter.svg';
-import robotIcon from '@/assets/svg/robot.svg';
-import factoryIcon from '@/assets/svg/factory.svg';
-import powerPlantIcon from '@/assets/svg/power-plant.svg';
-import emailIcon from '@/assets/svg/email.svg';
-import phoneIcon from '@/assets/svg/phone.svg';
-import linkedInIcon from '@/assets/svg/linkedIn.svg';
-
-const advantagesOfCooperation = [
-  'Solidnie i rzetelnie realizujemy każde zamówienie.',
-  'Cały czas podnosimy swoje kwalifikacje, systematycznie i świadomie rozwijając Naszą wiedzę i kompetencje.',
-  'Doradztwo i konsultacje na najwyższym poziomie.',
-  'Posiadamy niezbędne uprawienia.',
-];
-
-const services = [
-  {
-    headline: 'Instalacje Elektryczne',
-    text: 'Instalacje elektryczne i teletechniczne w budynkach przemysłowych, usługowych, administracyjnych, hotelach jak i w budownictwie indywidualnym.',
-    icon: workerIcon,
-  },
-  {
-    headline: 'Instalacje Fotowoltaiczne',
-    text: 'Instalacja fotowoltaiczna to prosty sposób na oszczędności związane z zużyciem energii elektrycznej dla zakładu przemysłowego jak i domu rodzinnego.',
-    icon: powerPlantIcon,
-  },
-  {
-    headline: 'Kompensacje Mocy Biernej',
-    text: 'Naszą główną domeną jest projektowanie i budowanie szytych na miarę urządzeń do kompensacji mocy biernej.',
-    icon: factoryIcon,
-  },
-  {
-    headline: 'Pomiary',
-    text: 'Pomiary elektryczne ochrony od porażeń bieżące, odbiorcze, okresowe 5 letnie, eksploatacyjne oraz analiza sieci.',
-    icon: voltmeterIcon,
-  },
-  {
-    headline: 'Automatyka',
-    text: 'Pomiary elektryczne ochrony od porażeń bieżące, odbiorcze, okresowe 5 letnie, eksploatacyjne oraz analiza sieci.',
-    icon: robotIcon,
-  },
-];
-
-const realizations = [
-  {
-    headline: 'Sterownia przepompowni "Chiechanów"',
-    text: 'Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego.',
-    photo: firstPhoto,
-  },
-  {
-    headline: 'System SmartHome - Wola Chomejowa',
-    text: 'Projekt inteligentnego domu skupiający się na instalacji elektrycznej oraz montażu systemów oświetleniowych.',
-    photo: secondPhoto,
-  },
-  {
-    headline: 'Rozdzielnia z systemem automatyki',
-    text: 'Projektowanie oraz montaż systemu rozdzielnicy przemysłowej z elementami sterowniczymi centralnego układu elektrycznego.',
-    photo: thirdPhoto,
-  },
-];
-
-const data = {
-  companyInfo: {
-    companyName: 'Olmat Mateusz Olifirowicz',
-    nip: '8252139859',
-    regon: '386857603',
-    adres: {
-      city: 'Warszawa',
-      zipCode: '03-982',
-      street: 'Jana Nowaka-Jeziorańskiego',
-      building: '44',
-      apartment: '18',
-      icon: '',
-    },
-  },
-  profilePhoto: profilePhoto,
-  contactInfo: [
-    {
-      description: 'mateuszolifirowicz@gmail.com',
-      link: 'mateuszolifirowicz@gmail.com',
-      icon: emailIcon,
-    },
-    {
-      description: '517-788-363',
-      link: '517788363',
-      icon: phoneIcon,
-    },
-    {
-      description: 'LinkedIn',
-      link: '#',
-      icon: linkedInIcon,
-    },
-  ],
-};
 
 export default function Home() {
   return (
@@ -182,7 +80,7 @@ const AboutSection = () => {
             Dlaczego warto z Nami współpracować ?
           </h4>
           <ul className="space-y-4">
-            {advantagesOfCooperation.map((advantage, _) => (
+            {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
               <li
                 className="flex gap-3 items-center p-4 bg-secondary rounded-md"
                 key={_}
@@ -214,7 +112,7 @@ const ServicesSection = () => {
             Jakie usługi oferujemy?
           </h4>
           <ul className="grid grid-cols-1 gap-12">
-            {services.map((service, _) => (
+            {websiteConfig.services.map((service, _) => (
               <li
                 className="flex flex-col gap-8 items-center justify-between px-4 py-8 min-h-64 h-full rounded-md border border-primary"
                 key={_}
@@ -250,7 +148,7 @@ const RealizationsSection = () => {
             Jakie inwestycje ukończyliśmy w ostatnim czasie?
           </h4>
           <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
-            {realizations.map((realization, _) => (
+            {websiteConfig.realizations.map((realization, _) => (
               <li
                 className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
                 key={_}
@@ -265,8 +163,18 @@ const RealizationsSection = () => {
                   aria-description={realization.headline}
                 />
                 <span className="">{realization.text}</span>
-                <button className="bg-primary px-4 py-3 rounded-md text-secondary">
-                  Czytaj więcej
+                <button className="bg-primary px-4 py-3 rounded-md">
+                  <Link
+                    className="text-secondary"
+                    href={`/realizacje/${Array.from(
+                      realization.headline
+                        .split(' ')
+                        .filter((el) => el !== '-' && el !== '')
+                        .map((el) => el.toLowerCase())
+                    ).join('-')}`}
+                  >
+                    Czytaj więcej
+                  </Link>
                 </button>
               </li>
             ))}
@@ -285,10 +193,13 @@ const ContactSection = () => {
         <div className="space-y-1">
           <p>W przypadku pytań zachęcamy do kontaktu.</p>
         </div>
-        <Image src={data.profilePhoto} alt="Mateusz Olifirowicz Olmat" />
+        <Image
+          src={websiteConfig.data.profilePhoto}
+          alt="Mateusz Olifirowicz Olmat"
+        />
         <div className="space-y-8">
           <ul className="space-y-2">
-            {data.contactInfo.map((contact, _) => (
+            {websiteConfig.data.contactInfo.map((contact, _) => (
               <li key={_}>
                 <Link href={contact.link} className="flex gap-4">
                   <Image src={contact.icon} alt="" aria-hidden />
@@ -302,28 +213,29 @@ const ContactSection = () => {
           </h4> */}
           <ul className="space-y-1">
             <li>
-              <span>{data.companyInfo.companyName}</span>
+              <span>{websiteConfig.data.companyInfo.companyName}</span>
             </li>
             <li>
-              <span>Nip: {data.companyInfo.nip}</span>
+              <span>Nip: {websiteConfig.data.companyInfo.nip}</span>
             </li>
             <li>
-              <span>Regon: {data.companyInfo.regon}</span>
+              <span>Regon: {websiteConfig.data.companyInfo.regon}</span>
             </li>
           </ul>
           <ul className="space-y-1">
             <li>
-              <span>ul. {data.companyInfo.adres.street}</span>
+              <span>ul. {websiteConfig.data.companyInfo.adres.street}</span>
             </li>
             <li>
               <span>
-                bud. {data.companyInfo.adres.building}/
-                {data.companyInfo.adres.apartment}
+                bud. {websiteConfig.data.companyInfo.adres.building}/
+                {websiteConfig.data.companyInfo.adres.apartment}
               </span>
             </li>
             <li>
               <span>
-                {data.companyInfo.adres.zipCode} {data.companyInfo.adres.city}
+                {websiteConfig.data.companyInfo.adres.zipCode}{' '}
+                {websiteConfig.data.companyInfo.adres.city}
               </span>
             </li>
           </ul>
