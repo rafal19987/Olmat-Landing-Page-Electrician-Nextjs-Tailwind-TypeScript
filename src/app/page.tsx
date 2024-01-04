@@ -166,12 +166,7 @@ const RealizationsSection = () => {
                 <button className="bg-primary px-4 py-3 rounded-md">
                   <Link
                     className="text-secondary"
-                    href={`/realizacje/${Array.from(
-                      realization.headline
-                        .split(' ')
-                        .filter((el) => el !== '-' && el !== '')
-                        .map((el) => el.toLowerCase())
-                    ).join('-')}`}
+                    href={`/realizacje/${realization.link}`}
                   >
                     Czytaj więcej
                   </Link>

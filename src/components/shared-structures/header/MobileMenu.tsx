@@ -28,9 +28,10 @@ export const MobileMenu: React.FC<{
           {links.map((link, _) => (
             <li className="h-12 w-4/6" key={_}>
               <Link
-                href={link.link}
+                href={`/${link.link}`}
                 className="flex items-center justify-center w-full h-full"
                 onClick={() => setIsOpen(false)}
+                replace
               >
                 <span className="">{link.name}</span>
               </Link>

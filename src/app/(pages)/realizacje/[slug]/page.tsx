@@ -1,56 +1,40 @@
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
+import { websiteConfig } from '@/websiteConfig';
+import Image from 'next/image';
 
 export default function RealizacjaItem({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
+  const realization = websiteConfig.realizations.filter(
+    (el) => el.link === slug
+  )[0];
+
+  if (!realization) return <span>Realizacja nie odnaleziona</span>;
+
   return (
     <section className="p-4">
       <div className="space-y-8">
-        <SectionHeadline headline={slug} />
+        <SectionHeadline headline={realization.headline} />
         <div className="space-y-1">
-          <p>
-            Wykonujemy prace montażowe, remontowe i modernizacyjne związane z
-            branżą elektrotechniki, elektroenergetyki.
-          </p>
+          <h1>{realization.text}</h1>
         </div>
         <div className="space-y-8">
-          <h4 className="text-xl font-bold leading-6">
-            Jakie inwestycje ukończyliśmy w ostatnim czasie?
-          </h4>
-          {/* <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
-            {realizations.map((realization, _) => (
-              <li
-                className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
-                key={_}
-              >
-                <h5 className="text-xl text-center font-bold">
-                  {realization.headline}
-                </h5>
-                <Image
-                  className="ml-0 w-full rounded-lg"
-                  src={realization.photo}
-                  alt={realization.headline}
-                  aria-description={realization.headline}
-                />
-                <span className="">{realization.text}</span>
-                <button className="bg-primary px-4 py-3 rounded-md">
-                  <Link
-                    className="text-secondary"
-                    href={`/realizacje/${Array.from(
-                      realization.headline
-                        .split(' ')
-                        .filter((el) => el !== '-' && el !== '')
-                        .map((el) => el.toLowerCase())
-                    ).join('-')}`}
-                  >
-                    Czytaj więcej
-                  </Link>
-                </button>
-              </li>
-            ))}
-          </ul> */}
+          <h2 className="text-xl font-bold leading-6">
+            Kilka fotografi z inwestycji
+          </h2>
+          <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
+            <li className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md">
+              <Image src={realization.photo} alt={realization.headline} />
+              <Image src={realization.photo} alt={realization.headline} />
+
+              <Image src={realization.photo} alt={realization.headline} />
+              <Image src={realization.photo} alt={realization.headline} />
+              <Image src={realization.photo} alt={realization.headline} />
+              <Image src={realization.photo} alt={realization.headline} />
+            </li>
+          </ul>
         </div>
       </div>
     </section>

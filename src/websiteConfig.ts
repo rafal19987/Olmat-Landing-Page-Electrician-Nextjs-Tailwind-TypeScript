@@ -44,19 +44,25 @@ export const websiteConfig = {
   ],
   realizations: [
     {
+      id: 1,
       headline: 'Sterownia przepompowni "Chiechanów"',
       text: 'Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego.',
       photo: firstPhoto,
+      link: 'sterownia-przepompowni-ciechanow',
     },
     {
+      id: 2,
       headline: 'System SmartHome - Wola Chomejowa',
       text: 'Projekt inteligentnego domu skupiający się na instalacji elektrycznej oraz montażu systemów oświetleniowych.',
       photo: secondPhoto,
+      link: 'system-smarthome-wola-chomejowa',
     },
     {
+      id: 3,
       headline: 'Rozdzielnia z systemem automatyki',
       text: 'Projektowanie oraz montaż systemu rozdzielnicy przemysłowej z elementami sterowniczymi centralnego układu elektrycznego.',
       photo: thirdPhoto,
+      link: 'rozdzielnia-z-systemem-automatyki',
     },
   ],
   advantagesOfCooperation: [
