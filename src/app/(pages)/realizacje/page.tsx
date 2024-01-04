@@ -24,9 +24,7 @@ const realizations = [
   },
 ];
 
-const RealizationsPage: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
+export default function RealizationsPage() {
   return (
     <section className="p-4">
       <div className="space-y-8">
@@ -77,6 +75,4 @@ const RealizationsPage: React.FC<{ children?: React.ReactNode }> = ({
       </div>
     </section>
   );
-};
-
-export default RealizationsPage;
+}
