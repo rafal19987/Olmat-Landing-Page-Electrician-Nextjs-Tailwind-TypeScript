@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
+import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
+import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import mainPhoto from '@/assets/images/main-photo.jpg';
 import rightArrowIcon from '@/assets/svg/right-arrow.svg';
@@ -25,13 +27,13 @@ const LandingSection = () => {
         <div>
           <div className="flex flex-col lg:p-4">
             <div className="flex flex-col gap-3 font-jura lg:mt-24">
-              <h1 className="font-bold text-3xl lg:text-6xl lg:max-w-[700px]">
+              <Typography.H1>
                 Usługi eleketryczne Mateusz Olifirowicz Olmat
-              </h1>
-              <h2 className="text-lg lg:text-2xl font-lato font-light leading-6">
+              </Typography.H1>
+              <Typography.H2>
                 Dostarczamy rozwiązania z zakresu kompensacji mocy biernej,
                 instalacji fotowoltaicznych.
-              </h2>
+              </Typography.H2>
             </div>
             <div className="mt-4 lg:mt-12">
               <button className="bg-primary p-4 rounded-md lg:w-[400px]">
@@ -62,180 +64,183 @@ const LandingSection = () => {
 
 const AboutSection = () => {
   return (
-    <section className="p-4">
-      <div className="space-y-8">
-        <SectionHeadline headline="Nasza firma" />
-        <div className="space-y-1">
-          <p>
-            Specjalizuje się w dostarczaniu rozwiązań z zakresu instalacji
-            fotowoltaicznych, automatyzacji, komensacji mocy biernej.
-          </p>
-          <p>
-            Wykonujemy pomiary wszystkich rodzajów instalacji elektrycznych.
-          </p>
-          <p>Oferujemy Nasze usługi na terenie całej Polski.</p>
-        </div>
-        <div className="space-y-8">
-          <h4 className="text-xl font-bold leading-6">
-            Dlaczego warto z Nami współpracować ?
-          </h4>
-          <ul className="space-y-4">
-            {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
-              <li
-                className="flex gap-3 items-center p-4 bg-secondary rounded-md"
-                key={_}
-              >
-                <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
-                <span>{advantage}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <SectionWrapper>
+      <SectionHeadline headline="Nasza firma" />
+      <div className="space-y-1">
+        <Typography.Paragraph>
+          Specjalizuje się w dostarczaniu rozwiązań z zakresu instalacji
+          fotowoltaicznych, automatyzacji, komensacji mocy biernej.
+        </Typography.Paragraph>
+        <Typography.Paragraph>
+          Wykonujemy pomiary wszystkich rodzajów instalacji elektrycznych.
+        </Typography.Paragraph>
+        <Typography.Paragraph>
+          Oferujemy Nasze usługi na terenie całej Polski.
+        </Typography.Paragraph>
       </div>
-    </section>
+      <div className="space-y-8">
+        <Typography.H3>Dlaczego warto z Nami współpracować ?</Typography.H3>
+        <ul className="space-y-4">
+          {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
+            <li
+              className="flex gap-3 items-center p-4 bg-secondary rounded-md"
+              key={_}
+            >
+              <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
+              <Typography.Paragraph>{advantage}</Typography.Paragraph>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SectionWrapper>
   );
 };
 
 const ServicesSection = () => {
   return (
-    <section className="p-4">
-      <div className="space-y-8">
-        <SectionHeadline headline="Nasze usługi" />
-        <div className="space-y-1">
-          <p>
-            Wykonujemy prace montażowe, remontowe i modernizacyjne związane z
-            branżą elektrotechniki, elektroenergetyki.
-          </p>
-        </div>
-        <div className="space-y-8">
-          <h4 className="text-xl font-bold leading-6">
-            Jakie usługi oferujemy?
-          </h4>
-          <ul className="grid grid-cols-1 gap-12">
-            {websiteConfig.services.map((service, _) => (
-              <li
-                className="flex flex-col gap-8 items-center justify-between px-4 py-8 min-h-64 h-full rounded-md border border-primary"
-                key={_}
-              >
-                <Image src={service.icon} width={60} alt="" aria-hidden />
-                <h5 className="font-bold text-lg">{service.headline}</h5>
-                <span className="text-center">{service.text}</span>
-                <button className="bg-primary px-4 py-3 rounded-md text-secondary">
-                  Czytaj więcej
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <SectionWrapper>
+      <SectionHeadline headline="Nasze usługi" />
+      <div className="space-y-1">
+        <Typography.Paragraph>
+          Wykonujemy prace montażowe, remontowe i modernizacyjne związane z
+          branżą elektrotechniki, elektroenergetyki.
+        </Typography.Paragraph>
       </div>
-    </section>
+      <div className="space-y-8">
+        <Typography.H3>Jakie usługi oferujemy?</Typography.H3>
+        <ul className="grid grid-cols-1 gap-12">
+          {websiteConfig.services.map((service, _) => (
+            <li
+              className="flex flex-col gap-8 items-center justify-between px-4 py-8 min-h-64 h-full rounded-md border border-primary"
+              key={_}
+            >
+              <Image src={service.icon} width={60} alt="" aria-hidden />
+              <Typography.H4>{service.headline}</Typography.H4>
+              <Typography.Paragraph className="text-center">
+                {service.text}
+              </Typography.Paragraph>
+              <button className="bg-primary px-4 py-3 rounded-md text-secondary">
+                Czytaj więcej
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SectionWrapper>
   );
 };
 
 const RealizationsSection = () => {
   return (
-    <section className="p-4">
-      <div className="space-y-8">
-        <SectionHeadline headline="Ostatnie realizacje" />
-        <div className="space-y-1">
-          <p>
-            Wykonujemy prace montażowe, remontowe i modernizacyjne związane z
-            branżą elektrotechniki, elektroenergetyki.
-          </p>
-        </div>
-        <div className="space-y-8">
-          <h4 className="text-xl font-bold leading-6">
-            Jakie inwestycje ukończyliśmy w ostatnim czasie?
-          </h4>
-          <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
-            {websiteConfig.realizations.map((realization, _) => (
-              <li
-                className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
-                key={_}
-              >
-                <h5 className="text-xl text-center font-bold">
-                  {realization.headline}
-                </h5>
-                <Image
-                  className="ml-0 w-full rounded-lg"
-                  src={realization.photo}
-                  alt={realization.headline}
-                  aria-description={realization.headline}
-                />
-                <span className="">{realization.text}</span>
-                <button className="bg-primary px-4 py-3 rounded-md">
-                  <Link
-                    className="text-secondary"
-                    href={`/realizacje/${realization.link}`}
-                  >
-                    Czytaj więcej
-                  </Link>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <SectionWrapper>
+      <SectionHeadline headline="Ostatnie realizacje" />
+      <div className="space-y-1">
+        <Typography.Paragraph>
+          Wykonujemy prace montażowe, remontowe i modernizacyjne związane z
+          branżą elektrotechniki, elektroenergetyki.
+        </Typography.Paragraph>
       </div>
-    </section>
+      <div className="space-y-8">
+        <Typography.H3>
+          Jakie inwestycje ukończyliśmy w ostatnim czasie?
+        </Typography.H3>
+
+        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
+          {websiteConfig.realizations.map((realization, _) => (
+            <li
+              className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+              key={_}
+            >
+              <Typography.H4 className="text-center">
+                {realization.headline}
+              </Typography.H4>
+
+              <Image
+                className="ml-0 w-full rounded-lg"
+                src={realization.photo}
+                alt={realization.headline}
+                aria-description={realization.headline}
+              />
+              <Typography.Paragraph>{realization.text}</Typography.Paragraph>
+              <button className="bg-primary px-4 py-3 rounded-md">
+                <Link
+                  className="text-secondary"
+                  href={`/realizacje/${realization.link}`}
+                >
+                  Czytaj więcej
+                </Link>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SectionWrapper>
   );
 };
 
 const ContactSection = () => {
   return (
-    <section className="p-4">
+    <SectionWrapper>
+      <SectionHeadline headline="Kontakt" />
+      <div className="space-y-1">
+        <Typography.Paragraph>
+          W przypadku pytań zachęcamy do kontaktu.
+        </Typography.Paragraph>
+      </div>
+      <Image
+        src={websiteConfig.data.profilePhoto}
+        alt="Mateusz Olifirowicz Olmat"
+      />
       <div className="space-y-8">
-        <SectionHeadline headline="Kontakt" />
-        <div className="space-y-1">
-          <p>W przypadku pytań zachęcamy do kontaktu.</p>
-        </div>
-        <Image
-          src={websiteConfig.data.profilePhoto}
-          alt="Mateusz Olifirowicz Olmat"
-        />
-        <div className="space-y-8">
-          <ul className="space-y-2">
-            {websiteConfig.data.contactInfo.map((contact, _) => (
-              <li key={_}>
-                <Link href={contact.link} className="flex gap-4">
-                  <Image src={contact.icon} alt="" aria-hidden />
-                  <span>{contact.description}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          {/* <h4 className="text-xl font-bold leading-6">
+        <ul className="space-y-2">
+          {websiteConfig.data.contactInfo.map((contact, _) => (
+            <li key={_}>
+              <Link href={contact.link} className="flex gap-4">
+                <Image src={contact.icon} alt="" aria-hidden />
+                <span>{contact.description}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        {/* <h4 className="text-xl font-bold leading-6">
             Jakie inwestycje ukończyliśmy w ostatnim czasie?
           </h4> */}
-          <ul className="space-y-1">
-            <li>
-              <span>{websiteConfig.data.companyInfo.companyName}</span>
-            </li>
-            <li>
-              <span>Nip: {websiteConfig.data.companyInfo.nip}</span>
-            </li>
-            <li>
-              <span>Regon: {websiteConfig.data.companyInfo.regon}</span>
-            </li>
-          </ul>
-          <ul className="space-y-1">
-            <li>
-              <span>ul. {websiteConfig.data.companyInfo.adres.street}</span>
-            </li>
-            <li>
-              <span>
-                bud. {websiteConfig.data.companyInfo.adres.building}/
-                {websiteConfig.data.companyInfo.adres.apartment}
-              </span>
-            </li>
-            <li>
-              <span>
-                {websiteConfig.data.companyInfo.adres.zipCode}{' '}
-                {websiteConfig.data.companyInfo.adres.city}
-              </span>
-            </li>
-          </ul>
-        </div>
+        <ul className="space-y-1">
+          <li>
+            <Typography.Span>
+              {websiteConfig.data.companyInfo.companyName}
+            </Typography.Span>
+          </li>
+          <li>
+            <Typography.Span>
+              Nip: {websiteConfig.data.companyInfo.nip}
+            </Typography.Span>
+          </li>
+          <li>
+            <Typography.Span>
+              Regon: {websiteConfig.data.companyInfo.regon}
+            </Typography.Span>
+          </li>
+        </ul>
+        <ul className="space-y-1">
+          <li>
+            <Typography.Span>
+              ul. {websiteConfig.data.companyInfo.adres.street}
+            </Typography.Span>
+          </li>
+          <li>
+            <Typography.Span>
+              bud. {websiteConfig.data.companyInfo.adres.building}
+            </Typography.Span>
+          </li>
+          <li>
+            <Typography.Span>
+              {websiteConfig.data.companyInfo.adres.zipCode}{' '}
+              {websiteConfig.data.companyInfo.adres.city}
+            </Typography.Span>
+          </li>
+        </ul>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
