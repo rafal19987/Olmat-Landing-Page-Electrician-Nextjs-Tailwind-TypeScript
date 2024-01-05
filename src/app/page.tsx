@@ -37,9 +37,11 @@ const LandingSection = () => {
             </div>
             <div className="mt-4 lg:mt-12">
               <button className="bg-primary p-4 rounded-md lg:w-[400px]">
-                <span className="font-lato font-bold text-sm text-secondary">
-                  Sprawdź dotychczasowe realizacje
-                </span>
+                <Link href="/realizacje">
+                  <span className="font-lato font-bold text-sm text-secondary">
+                    Sprawdź dotychczasowe realizacje
+                  </span>
+                </Link>
               </button>
             </div>
           </div>
@@ -146,32 +148,39 @@ const RealizationsSection = () => {
         </Typography.H3>
 
         <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
-          {websiteConfig.realizations.map((realization, _) => (
-            <li
-              className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
-              key={_}
-            >
-              <Typography.H4 className="text-center">
-                {realization.headline}
-              </Typography.H4>
-
-              <Image
-                className="ml-0 w-full rounded-lg"
-                src={realization.photo}
-                alt={realization.headline}
-                aria-description={realization.headline}
-              />
-              <Typography.Paragraph>{realization.text}</Typography.Paragraph>
-              <button className="bg-primary px-4 py-3 rounded-md">
-                <Link
-                  className="text-secondary"
-                  href={`/realizacje/${realization.link}`}
+          {websiteConfig.realizations.map(
+            (realization, idx) =>
+              idx <= 1 && (
+                <li
+                  className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                  key={idx}
                 >
-                  Czytaj więcej
-                </Link>
-              </button>
-            </li>
-          ))}
+                  <Typography.H4 className="text-center">
+                    {realization.headline}
+                  </Typography.H4>
+
+                  <Image
+                    className="ml-0 w-full rounded-lg"
+                    src={realization.photo}
+                    alt={realization.headline}
+                    aria-description={realization.headline}
+                  />
+                  <Typography.Paragraph>
+                    {realization.text.length > 120
+                      ? `${realization.text.slice(0, 120)} (...)`
+                      : realization.text}
+                  </Typography.Paragraph>
+                  <button className="bg-primary px-4 py-3 rounded-md">
+                    <Link
+                      className="text-secondary"
+                      href={`/realizacje/${realization.link}`}
+                    >
+                      Czytaj więcej
+                    </Link>
+                  </button>
+                </li>
+              )
+          )}
         </ul>
       </div>
     </SectionWrapper>

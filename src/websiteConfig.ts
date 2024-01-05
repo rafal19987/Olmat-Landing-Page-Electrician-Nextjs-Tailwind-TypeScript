@@ -46,9 +46,14 @@ export const websiteConfig = {
     {
       id: 1,
       headline: 'Sterownia przepompowni "Chiechanów"',
-      text: 'Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego.',
+      text: 'Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego. Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego. Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego.',
       photo: firstPhoto,
       link: 'sterownia-przepompowni-ciechanow',
+      workScope: [
+        'Analiza parametrów sieci',
+        'Pomiar sieci',
+        'Wykonanie sterowania',
+      ],
     },
     {
       id: 2,
@@ -56,6 +61,11 @@ export const websiteConfig = {
       text: 'Projekt inteligentnego domu skupiający się na instalacji elektrycznej oraz montażu systemów oświetleniowych.',
       photo: secondPhoto,
       link: 'system-smarthome-wola-chomejowa',
+      workScope: [
+        'Tworzenie projektu oświetlenia',
+        'Doradzwto techniczne',
+        'Wykonanie systemu SmartHome z wykorzystaniem systemu Fiber',
+      ],
     },
     {
       id: 3,
@@ -63,6 +73,7 @@ export const websiteConfig = {
       text: 'Projektowanie oraz montaż systemu rozdzielnicy przemysłowej z elementami sterowniczymi centralnego układu elektrycznego.',
       photo: thirdPhoto,
       link: 'rozdzielnia-z-systemem-automatyki',
+      workScope: ['Prefabrykacja rozdzielnic', 'Montaż rozdzielnic'],
     },
   ],
   advantagesOfCooperation: [
