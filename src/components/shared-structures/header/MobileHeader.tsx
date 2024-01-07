@@ -18,7 +18,7 @@ export const MobileHeader = () => {
         <Logo />
         <Hamburger clickHandle={clickHandle} isOpen={isOpen} />
       </div>
-      <MobileMenu isOpen={isOpen} />
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };
