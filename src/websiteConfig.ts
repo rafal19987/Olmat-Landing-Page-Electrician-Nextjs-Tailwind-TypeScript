@@ -115,4 +115,14 @@ export const websiteConfig = {
       },
     ],
   },
+  navigation: [
+    {
+      name: 'Home',
+      link: '/',
+    },
+    {
+      name: 'Realizacje',
+      link: 'realizacje',
+    },
+  ],
 };
