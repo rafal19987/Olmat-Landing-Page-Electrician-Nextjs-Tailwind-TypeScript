@@ -1,16 +1,6 @@
 import Link from 'next/link';
 import { Dispatch, SetStateAction } from 'react';
-
-const links = [
-  {
-    name: 'Home',
-    link: '/',
-  },
-  {
-    name: 'Realizacje',
-    link: 'realizacje',
-  },
-];
+import { websiteConfig } from '@/websiteConfig';
 
 export const MobileMenu: React.FC<{
   children?: React.ReactNode;
@@ -25,15 +15,15 @@ export const MobileMenu: React.FC<{
     >
       <nav className="w-full h-full p-8">
         <ul className="flex flex-col gap-8 items-center justify-evenly w-full h-full">
-          {links.map((link, _) => (
+          {websiteConfig.navigation.map((navItem, _) => (
             <li className="h-12 w-4/6" key={_}>
               <Link
-                href={`/${link.link}`}
+                href={`/${navItem.link}`}
                 className="flex items-center justify-center w-full h-full"
                 onClick={() => setIsOpen(false)}
                 replace
               >
-                <span className="">{link.name}</span>
+                <span className="">{navItem.name}</span>
               </Link>
             </li>
           ))}
