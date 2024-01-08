@@ -22,35 +22,30 @@ export default function Home() {
 
 const LandingSection = () => {
   return (
-    <section className="flex flex-col gap-12 p-4 w-full lg:flex-wrap lg:p-0 lg:justify-between lg:h-screen">
-      <div className="flex flex-col gap-4 lg:grow lg:flex-row">
-        <div>
-          <div className="flex flex-col lg:p-4">
-            <div className="flex flex-col gap-3 font-jura lg:mt-24">
-              <Typography.H1>
-                Usługi eleketryczne Mateusz Olifirowicz Olmat
-              </Typography.H1>
-              <Typography.H2>
-                Dostarczamy rozwiązania z zakresu kompensacji mocy biernej,
-                instalacji fotowoltaicznych.
-              </Typography.H2>
-            </div>
-            <div className="mt-4 lg:mt-12">
-              <button className="bg-primary p-4 rounded-md lg:w-[400px]">
-                <Link href="/realizacje">
-                  <span className="font-lato font-bold text-sm text-secondary">
-                    Sprawdź dotychczasowe realizacje
-                  </span>
-                </Link>
-              </button>
-            </div>
+    <section className="flex flex-col gap-12 p-4 w-full lg:p-0  lg:h-screen lg:flex-row">
+      <div className="flex flex-col gap-4 lg:grow lg:flex-row lg:w-2/4 lg:items-center lg:justify-center">
+        <div className="flex flex-col lg:p-4">
+          <div className="flex flex-col gap-3 font-jura lg:mt-24">
+            <Typography.H1>
+              Usługi eleketryczne Mateusz Olifirowicz Olmat
+            </Typography.H1>
+            <Typography.H2 className="lg:max-w-[500px]">
+              Dostarczamy rozwiązania z zakresu kompensacji mocy biernej,
+              instalacji fotowoltaicznych.
+            </Typography.H2>
+          </div>
+          <div className="mt-4 lg:mt-12">
+            <button className="bg-primary p-4 rounded-md lg:w-[400px]">
+              <Link href="/realizacje">
+                <span className="font-lato font-bold text-sm text-secondary">
+                  Sprawdź dotychczasowe realizacje
+                </span>
+              </Link>
+            </button>
           </div>
         </div>
-        <div className="hidden lg:flex border-red-500 border lg:grow lg:items-center lg:justify-center">
-          carousel
-        </div>
       </div>
-      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-none lg:w-[calc(100vw-var(--header-width-desktop)))] lg:h-[280px]">
+      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-none lg:w-2/4 lg:h-screen">
         <Image
           src={mainPhoto}
           alt="fotografia elektryka by: james-kovin"
@@ -82,10 +77,10 @@ const AboutSection = () => {
       </div>
       <div className="space-y-8">
         <Typography.H3>Dlaczego warto z Nami współpracować ?</Typography.H3>
-        <ul className="space-y-4">
+        <ul className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4 lg:space-y-0 lg:max-w-fit">
           {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
             <li
-              className="flex gap-3 items-center p-4 bg-secondary rounded-md"
+              className="flex gap-3 items-center p-4 bg-secondary rounded-md h-full lg:items-starts lg:max-w-[var(--max-card-width)]"
               key={_}
             >
               <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
@@ -110,10 +105,10 @@ const ServicesSection = () => {
       </div>
       <div className="space-y-8">
         <Typography.H3>Jakie usługi oferujemy?</Typography.H3>
-        <ul className="grid grid-cols-1 gap-12">
+        <ul className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:max-w-fit">
           {websiteConfig.services.map((service, _) => (
             <li
-              className="flex flex-col gap-8 items-center justify-between px-4 py-8 min-h-64 h-full rounded-md border border-primary"
+              className="flex flex-col gap-8 items-center justify-between px-4 py-8 max-w-[var(--max-card-width)] min-h-64 h-full rounded-md border border-primary"
               key={_}
             >
               <Image src={service.icon} width={60} alt="" aria-hidden />
@@ -147,12 +142,12 @@ const RealizationsSection = () => {
           Jakie inwestycje ukończyliśmy w ostatnim czasie?
         </Typography.H3>
 
-        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
+        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen lg:grid-cols-2 lg:max-w-fit">
           {websiteConfig.realizations.map(
             (realization, idx) =>
               idx <= 1 && (
                 <li
-                  className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                  className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
                   key={idx}
                 >
                   <Typography.H4 className="text-center">
