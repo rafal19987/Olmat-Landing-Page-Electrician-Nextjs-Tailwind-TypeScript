@@ -77,10 +77,10 @@ const AboutSection = () => {
       </div>
       <div className="space-y-8">
         <Typography.H3>Dlaczego warto z Nami współpracować ?</Typography.H3>
-        <ul className="space-y-4">
+        <ul className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4 lg:space-y-0 lg:max-w-fit">
           {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
             <li
-              className="flex gap-3 items-center p-4 bg-secondary rounded-md"
+              className="flex gap-3 items-center p-4 bg-secondary rounded-md h-full lg:items-starts lg:max-w-[600px]"
               key={_}
             >
               <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
