@@ -22,35 +22,30 @@ export default function Home() {
 
 const LandingSection = () => {
   return (
-    <section className="flex flex-col gap-12 p-4 w-full lg:flex-wrap lg:p-0 lg:justify-between lg:h-screen">
-      <div className="flex flex-col gap-4 lg:grow lg:flex-row">
-        <div>
-          <div className="flex flex-col lg:p-4">
-            <div className="flex flex-col gap-3 font-jura lg:mt-24">
-              <Typography.H1>
-                Usługi eleketryczne Mateusz Olifirowicz Olmat
-              </Typography.H1>
-              <Typography.H2>
-                Dostarczamy rozwiązania z zakresu kompensacji mocy biernej,
-                instalacji fotowoltaicznych.
-              </Typography.H2>
-            </div>
-            <div className="mt-4 lg:mt-12">
-              <button className="bg-primary p-4 rounded-md lg:w-[400px]">
-                <Link href="/realizacje">
-                  <span className="font-lato font-bold text-sm text-secondary">
-                    Sprawdź dotychczasowe realizacje
-                  </span>
-                </Link>
-              </button>
-            </div>
+    <section className="flex flex-col gap-12 p-4 w-full lg:p-0  lg:h-screen lg:flex-row">
+      <div className="flex flex-col gap-4 lg:grow lg:flex-row lg:w-2/4 lg:items-center lg:justify-center">
+        <div className="flex flex-col lg:p-4">
+          <div className="flex flex-col gap-3 font-jura lg:mt-24">
+            <Typography.H1>
+              Usługi eleketryczne Mateusz Olifirowicz Olmat
+            </Typography.H1>
+            <Typography.H2 className="lg:max-w-[500px]">
+              Dostarczamy rozwiązania z zakresu kompensacji mocy biernej,
+              instalacji fotowoltaicznych.
+            </Typography.H2>
+          </div>
+          <div className="mt-4 lg:mt-12">
+            <button className="bg-primary p-4 rounded-md lg:w-[400px]">
+              <Link href="/realizacje">
+                <span className="font-lato font-bold text-sm text-secondary">
+                  Sprawdź dotychczasowe realizacje
+                </span>
+              </Link>
+            </button>
           </div>
         </div>
-        <div className="hidden lg:flex border-red-500 border lg:grow lg:items-center lg:justify-center">
-          carousel
-        </div>
       </div>
-      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-none lg:w-[calc(100vw-var(--header-width-desktop)))] lg:h-[280px]">
+      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-none lg:w-2/4 lg:h-screen">
         <Image
           src={mainPhoto}
           alt="fotografia elektryka by: james-kovin"
