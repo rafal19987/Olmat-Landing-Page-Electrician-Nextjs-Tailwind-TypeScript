@@ -1,5 +1,14 @@
+import Image from 'next/image';
+import logoCompany from '@/assets/svg/logo-company.svg';
+
 export const Logo: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
-  return <span className="text-secondary lg:text-primary">Olifirowicz</span>;
+  return (
+    <Image
+      src={logoCompany}
+      alt="Logo firmy Olmat"
+      aria-description="Logo firmy Olmat"
+    />
+  );
 };
