@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="pl">
       <body className={`${lato.variable} ${jura.variable}`}>
         <div className="font-lato relative flex flex-col w-screen min-h-screen h-full bg-slate-100 lg:flex-row">
-          <div className="fixed top-0 w-full lg:w-[var(--header-width-desktop)] lg:flex lg:static z-50">
+          <div className="fixed top-0 w-full z-50">
             <Header />
           </div>
 
