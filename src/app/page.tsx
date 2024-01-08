@@ -80,7 +80,7 @@ const AboutSection = () => {
         <ul className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4 lg:space-y-0 lg:max-w-fit">
           {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
             <li
-              className="flex gap-3 items-center p-4 bg-secondary rounded-md h-full lg:items-starts lg:max-w-[600px]"
+              className="flex gap-3 items-center p-4 bg-secondary rounded-md h-full lg:items-starts lg:max-w-[var(--max-card-width)]"
               key={_}
             >
               <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
@@ -105,10 +105,10 @@ const ServicesSection = () => {
       </div>
       <div className="space-y-8">
         <Typography.H3>Jakie usługi oferujemy?</Typography.H3>
-        <ul className="grid grid-cols-1 gap-12">
+        <ul className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:max-w-fit">
           {websiteConfig.services.map((service, _) => (
             <li
-              className="flex flex-col gap-8 items-center justify-between px-4 py-8 min-h-64 h-full rounded-md border border-primary"
+              className="flex flex-col gap-8 items-center justify-between px-4 py-8 max-w-[var(--max-card-width)] min-h-64 h-full rounded-md border border-primary"
               key={_}
             >
               <Image src={service.icon} width={60} alt="" aria-hidden />
@@ -142,12 +142,12 @@ const RealizationsSection = () => {
           Jakie inwestycje ukończyliśmy w ostatnim czasie?
         </Typography.H3>
 
-        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen">
+        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen lg:grid-cols-2 lg:max-w-fit">
           {websiteConfig.realizations.map(
             (realization, idx) =>
               idx <= 1 && (
                 <li
-                  className="flex flex-col gap-6 items-center px-4 py-8 min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                  className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
                   key={idx}
                 >
                   <Typography.H4 className="text-center">
