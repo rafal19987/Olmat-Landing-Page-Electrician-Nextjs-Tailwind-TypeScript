@@ -18,7 +18,9 @@ export const DesktopHeader: React.FC<{ children?: React.ReactNode }> = ({
                 href={navItem.link}
                 className="flex items-center justify-center w-full h-fit"
               >
-                <span className="text-secondary">{navItem.name}</span>
+                <span className="text-secondary lg:text-primary">
+                  {navItem.name}
+                </span>
               </Link>
             </li>
           ))}
