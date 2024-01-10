@@ -5,7 +5,8 @@
 :root {
   --header-height: 3.5rem;
   --header-height-desktop: 6rem;
-  --max-card-width: 600px;
+  --max-card-width: 400px;
+  --max-content-width: 1400px;
 }
 
 * {

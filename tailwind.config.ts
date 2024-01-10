@@ -18,6 +18,7 @@ const config: Config = {
       colors: {
         primary: '#022B3A',
         secondary: '#E1E5F2',
+        bodyBg: '#f6faff',
       },
     },
   },

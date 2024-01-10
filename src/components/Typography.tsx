@@ -23,7 +23,7 @@ export const H2: React.FC<{
   return (
     <h2
       className={cn(
-        'text-lg lg:text-2xl font-lato font-light leading-6',
+        'text-lg lg:text-3xl font-lato font-light leading-6',
         className
       )}
     >
@@ -37,7 +37,9 @@ export const H3: React.FC<{
   className?: string;
 }> = ({ children, className }) => {
   return (
-    <h3 className={cn('text-xl font-bold leading-6', className)}>{children}</h3>
+    <h3 className={cn('text-xl font-bold leading-6 lg:text-2xl', className)}>
+      {children}
+    </h3>
   );
 };
 
@@ -45,19 +47,25 @@ export const H4: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className }) => {
-  return <h4 className={cn('font-bold text-lg', className)}>{children}</h4>;
+  return (
+    <h4 className={cn('font-bold text-lg lg:text-xl', className)}>
+      {children}
+    </h4>
+  );
 };
 
 export const Paragraph: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className }) => {
-  return <p className={cn('text-black', className)}>{children}</p>;
+  return <p className={cn('text-black lg:text-lg', className)}>{children}</p>;
 };
 
 export const Span: React.FC<{
   children: React.ReactNode;
   className?: string;
 }> = ({ children, className }) => {
-  return <span className={cn('text-black', className)}>{children}</span>;
+  return (
+    <span className={cn('text-black lg:text-base', className)}>{children}</span>
+  );
 };
