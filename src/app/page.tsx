@@ -6,6 +6,7 @@ import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import mainPhoto from '@/assets/images/main-photo.jpg';
 import rightArrowIcon from '@/assets/svg/right-arrow.svg';
+import cropArchitectOpeningBlueprint from '@/assets/images/crop-architect-opening-blueprint.jpg';
 
 export default function Home() {
   return (
@@ -15,15 +16,14 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <RealizationsSection />
-      <ContactSection />
     </>
   );
 }
 
 const LandingSection = () => {
   return (
-    <section className="flex flex-col gap-12 p-4 w-full lg:p-0  lg:h-screen lg:flex-row">
-      <div className="flex flex-col gap-4 lg:grow lg:flex-row lg:w-2/4 lg:items-center lg:justify-center">
+    <section className="flex flex-col gap-12 p-4 w-full lg:p-0  lg:h-[calc(100vh-var(--header-height-desktop))] lg:flex-row lg:w-screen">
+      <div className="flex flex-col gap-4 lg:grow lg:flex-row lg:w-2/4 lg:justify-center">
         <div className="flex flex-col lg:p-4">
           <div className="flex flex-col gap-3 font-jura lg:mt-24">
             <Typography.H1>
@@ -45,7 +45,7 @@ const LandingSection = () => {
           </div>
         </div>
       </div>
-      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-none lg:w-2/4 lg:h-screen">
+      <div className="relative h-[calc(50vh)] overflow-hidden rounded-xl lg:rounded-t-none lg:w-2/4 lg:h-full">
         <Image
           src={mainPhoto}
           alt="fotografia elektryka by: james-kovin"
@@ -63,24 +63,37 @@ const AboutSection = () => {
   return (
     <SectionWrapper>
       <SectionHeadline headline="Nasza firma" />
-      <div className="space-y-1">
-        <Typography.Paragraph>
-          Specjalizuje się w dostarczaniu rozwiązań z zakresu instalacji
-          fotowoltaicznych, automatyzacji, komensacji mocy biernej.
-        </Typography.Paragraph>
-        <Typography.Paragraph>
-          Wykonujemy pomiary wszystkich rodzajów instalacji elektrycznych.
-        </Typography.Paragraph>
-        <Typography.Paragraph>
-          Oferujemy Nasze usługi na terenie całej Polski.
-        </Typography.Paragraph>
+      <div className="flex flex-col lg:flex-row lg:justify-between">
+        <div className="space-y-1 lg:w-5/12 lg:relative lg:flex lg:flex-col">
+          <Typography.Paragraph className="lg:text-2xl">
+            Specjalizuje się w dostarczaniu rozwiązań z zakresu instalacji
+            fotowoltaicznych, automatyzacji, komensacji mocy biernej.
+          </Typography.Paragraph>
+          <Typography.Paragraph className="lg:text-2xl">
+            Wykonujemy pomiary wszystkich rodzajów instalacji elektrycznych.
+          </Typography.Paragraph>
+          <Typography.Paragraph className="lg:text-xl lg:absolute lg:bottom-0">
+            Oferujemy Nasze usługi na terenie całej Polski.
+          </Typography.Paragraph>
+        </div>
+        <div className="relative overflow-hidden rounded-xl lg:w-2/4 lg:h-[calc(40vh)]">
+          <Image
+            src={cropArchitectOpeningBlueprint}
+            alt="Image by Freepik "
+            className="object-cover "
+            fill
+            placeholder="blur"
+          />
+        </div>
       </div>
-      <div className="space-y-8">
-        <Typography.H3>Dlaczego warto z Nami współpracować ?</Typography.H3>
-        <ul className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-4 lg:space-y-0 lg:max-w-fit">
+      <div className="space-y-8 lg:flex lg:items-center lg:flex-col">
+        <Typography.H3 className="lg:self-start">
+          Dlaczego warto z Nami współpracować ?
+        </Typography.H3>
+        <ul className="space-y-4 lg:space-y-0 lg:gap-4 lg:flex lg:flex-wrap lg:justify-center">
           {websiteConfig.advantagesOfCooperation.map((advantage, _) => (
             <li
-              className="flex gap-3 items-center p-4 bg-secondary rounded-md h-full lg:items-starts lg:max-w-[var(--max-card-width)]"
+              className="flex w-full gap-3 items-center min-h-24 max-h-full p-4 bg-secondary rounded-md lg:items-starts  lg:max-w-[var(--max-card-width)] "
               key={_}
             >
               <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
@@ -105,18 +118,20 @@ const ServicesSection = () => {
       </div>
       <div className="space-y-8">
         <Typography.H3>Jakie usługi oferujemy?</Typography.H3>
-        <ul className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:max-w-fit">
+        <ul className="flex flex-col gap-12 md:justify-center md:items-center lg:flex-wrap lg:flex-row ">
           {websiteConfig.services.map((service, _) => (
             <li
-              className="flex flex-col gap-8 items-center justify-between px-4 py-8 max-w-[var(--max-card-width)] min-h-64 h-full rounded-md border border-primary"
+              className="flex flex-col gap-8 items-center justify-between px-4 py-8 md:max-w-[var(--max-card-width)] min-h-64  transition duration-300 rounded-md border border-primary lg:self-stretch lg:w-96 lg:gap-6 lg:min-w-[96px] lg:border-secondary hover:border-primary"
               key={_}
             >
-              <Image src={service.icon} width={60} alt="" aria-hidden />
-              <Typography.H4>{service.headline}</Typography.H4>
-              <Typography.Paragraph className="text-center">
+              <div className="flex flex-col items-center justify-center gap-8 w-full lg:flex-row lg:items-center  lg:gap-4">
+                <Image src={service.icon} width={50} alt="" aria-hidden />
+                <Typography.H4>{service.headline}</Typography.H4>
+              </div>
+              <Typography.Paragraph className="text-center lg:text-start lg:text-base">
                 {service.text}
               </Typography.Paragraph>
-              <button className="bg-primary px-4 py-3 rounded-md text-secondary">
+              <button className="bg-primary px-4 py-3 rounded-md text-secondary hover:bg-cyan-900 hover:text-white hover:transition-colors">
                 Czytaj więcej
               </button>
             </li>
@@ -137,15 +152,15 @@ const RealizationsSection = () => {
           branżą elektrotechniki, elektroenergetyki.
         </Typography.Paragraph>
       </div>
-      <div className="space-y-8">
-        <Typography.H3>
+      <div className="space-y-8 lg:flex lg:flex-col lg:items-center">
+        <Typography.H3 className="self-start">
           Jakie inwestycje ukończyliśmy w ostatnim czasie?
         </Typography.H3>
 
-        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen lg:grid-cols-2 lg:max-w-fit">
+        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit">
           {websiteConfig.realizations.map(
             (realization, idx) =>
-              idx <= 1 && (
+              idx < 3 && (
                 <li
                   className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
                   key={idx}
@@ -176,73 +191,6 @@ const RealizationsSection = () => {
                 </li>
               )
           )}
-        </ul>
-      </div>
-    </SectionWrapper>
-  );
-};
-
-const ContactSection = () => {
-  return (
-    <SectionWrapper>
-      <SectionHeadline headline="Kontakt" />
-      <div className="space-y-1">
-        <Typography.Paragraph>
-          W przypadku pytań zachęcamy do kontaktu.
-        </Typography.Paragraph>
-      </div>
-      <Image
-        src={websiteConfig.data.profilePhoto}
-        alt="Mateusz Olifirowicz Olmat"
-      />
-      <div className="space-y-8">
-        <ul className="space-y-2">
-          {websiteConfig.data.contactInfo.map((contact, _) => (
-            <li key={_}>
-              <Link href={contact.link} className="flex gap-4">
-                <Image src={contact.icon} alt="" aria-hidden />
-                <span>{contact.description}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        {/* <h4 className="text-xl font-bold leading-6">
-            Jakie inwestycje ukończyliśmy w ostatnim czasie?
-          </h4> */}
-        <ul className="space-y-1">
-          <li>
-            <Typography.Span>
-              {websiteConfig.data.companyInfo.companyName}
-            </Typography.Span>
-          </li>
-          <li>
-            <Typography.Span>
-              Nip: {websiteConfig.data.companyInfo.nip}
-            </Typography.Span>
-          </li>
-          <li>
-            <Typography.Span>
-              Regon: {websiteConfig.data.companyInfo.regon}
-            </Typography.Span>
-          </li>
-        </ul>
-        <ul className="space-y-1">
-          <li>
-            <Typography.Span>
-              ul. {websiteConfig.data.companyInfo.adres.street}
-            </Typography.Span>
-          </li>
-          <li>
-            <Typography.Span>
-              bud. {websiteConfig.data.companyInfo.adres.building}
-            </Typography.Span>
-          </li>
-          <li>
-            <Typography.Span>
-              {websiteConfig.data.companyInfo.adres.zipCode}{' '}
-              {websiteConfig.data.companyInfo.adres.city}
-            </Typography.Span>
-          </li>
         </ul>
       </div>
     </SectionWrapper>
