@@ -124,5 +124,13 @@ export const websiteConfig = {
       name: 'Realizacje',
       link: 'realizacje',
     },
+    {
+      name: 'Usługi',
+      link: 'uslugi',
+    },
+    {
+      name: 'Kontakt',
+      link: 'kontakt',
+    },
   ],
 };
