@@ -19,13 +19,13 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={`${lato.variable} ${jura.variable}`}>
-        <div className="font-lato relative flex flex-col w-screen min-h-screen h-full bg-slate-100 lg:flex-row">
-          <div className="fixed top-0 w-full z-50">
+        <div className="font-lato relative flex flex-col items-center w-screen min-h-screen h-full bg-white">
+          <div className="fixed top-0 left-0 w-full z-50">
             <Header />
           </div>
 
-          <div className="flex grow flex-col h-full items-center w-full lg:min-h-screen lg:h-full">
-            <main className="mt-[var(--header-height)] flex flex-col gap-12 w-full lg:mt-0 lg:w-[calc(100vw-var(--header-width-desktop))]">
+          <div className="mt-[var(--header-height)] flex grow flex-col items-center w-full h-full pb-24 max-w-[var(--max-content-width)] lg:min-h-screen lg:h-full lg:mt-[var(--header-height-desktop)]">
+            <main className="flex flex-col gap-12 items-center w-full lg:mt-0 max-w-[var(--max-content-width)]">
               {children}
             </main>
           </div>
