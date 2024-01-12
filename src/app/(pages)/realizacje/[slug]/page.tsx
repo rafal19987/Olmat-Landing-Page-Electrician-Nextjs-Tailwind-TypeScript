@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { NavigationButton } from '@/components/shared-atoms/NavigationButton';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
@@ -17,7 +18,15 @@ export default function RealizacjaItem({
   if (!realization) return <span>Realizacja nie odnaleziona</span>;
 
   return (
-    <SectionWrapper>
+    <SectionWrapper className="flex flex-col">
+      <NavigationButton
+        name="Powrót do realizacji"
+        route={websiteConfig.navigation[1].link}
+        className="flex gap-4 items-center self-end"
+      >
+        <Image className="rotate-180" src={rightArrowIcon} alt="" aria-hidden />
+      </NavigationButton>
+
       <SectionHeadline
         className="after:left-0 after:w-full text-center"
         headline={realization.headline}
@@ -30,7 +39,7 @@ export default function RealizacjaItem({
         <ul className="space-y-4">
           {realization.workScope?.map((work, _) => (
             <li
-              className="flex gap-3 items-center p-4 bg-secondary rounded-md"
+              className="flex w-full gap-3 items-center min-h-24 max-h-full p-4 bg-secondary rounded-md lg:items-starts  lg:max-w-[var(--max-card-width)] "
               key={_}
             >
               <Image src={rightArrowIcon} width={20} alt="" aria-hidden />
@@ -39,11 +48,26 @@ export default function RealizacjaItem({
           ))}
         </ul>
       </div>
-      <div className="space-y-8">
+      <div className="space-y-8 lg:flex lg:flex-col lg:items-center">
         <h2 className="text-xl font-bold leading-6">
           Kilka fotografi z inwestycji
         </h2>
-        <ul className="grid grid-cols-1 gap-12 -ml-4 w-screen">
+        <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3 lg:gap-12 lg:ml-0 lg:w-full">
+          <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
+            <Image src={realization.photo} alt="" aria-hidden />
+          </li>
+          <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
+            <Image src={realization.photo} alt="" aria-hidden />
+          </li>
+          <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
+            <Image src={realization.photo} alt="" aria-hidden />
+          </li>
+          <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
+            <Image src={realization.photo} alt="" aria-hidden />
+          </li>
+          <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
+            <Image src={realization.photo} alt="" aria-hidden />
+          </li>
           <li className="flex flex-col gap-6 items-center px-4 min-h-32 h-full">
             <Image src={realization.photo} alt="" aria-hidden />
           </li>
