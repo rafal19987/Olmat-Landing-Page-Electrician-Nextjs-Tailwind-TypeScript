@@ -131,8 +131,14 @@ const ServicesSection = () => {
               <Typography.Paragraph className="text-center lg:text-start lg:text-base">
                 {service.text}
               </Typography.Paragraph>
+
               <button className="bg-primary px-4 py-3 rounded-md text-secondary hover:bg-cyan-900 hover:text-white hover:transition-colors">
-                Czytaj więcej
+                <Link
+                  className="text-secondary"
+                  href={`/uslugi/${service.link}`}
+                >
+                  Czytaj więcej
+                </Link>
               </button>
             </li>
           ))}

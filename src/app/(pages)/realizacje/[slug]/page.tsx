@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { NavigationButton } from '@/components/shared-atoms/NavigationButton';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
@@ -15,7 +16,7 @@ export default function RealizacjaItem({
     (el) => el.link === slug
   )[0];
 
-  if (!realization) return <span>Realizacja nie odnaleziona</span>;
+  if (!realization) return notFound();
 
   return (
     <SectionWrapper className="flex flex-col">
