@@ -18,7 +18,7 @@ export const DesktopMenuItem: React.FC<{
   return (
     <li key={key} className="flex items-center justify-center">
       <Link
-        href={link}
+        href={`/${link}`}
         className="flex items-center justify-center w-full h-fit"
       >
         <Typography.Span
