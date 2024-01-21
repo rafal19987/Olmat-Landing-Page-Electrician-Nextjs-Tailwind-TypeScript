@@ -10,6 +10,11 @@ import firstPhoto from '@/assets/images/1.png';
 import secondPhoto from '@/assets/images/2.png';
 import thirdPhoto from '@/assets/images/3.png';
 import profilePhoto from '@/assets/images/mateusz-olifirowicz-profile.png';
+import electricalInstallationsPhoto from '@/assets/images/instalacje-elektryczne.jpg';
+import photovoltaicInstallationsPhoto from '@/assets/images/instalacje-fotowoltaiczne.jpg';
+import reactivePowerCompensationPhoto from '@/assets/images/kompensacje-mocy-biernej.jpg';
+import measurementPhoto from '@/assets/images/pomiary.jpg';
+import automationPhoto from '@/assets/images/automatyka.jpg';
 
 export const websiteConfig = {
   title: 'OLMAT | Mateusz Olifirowicz',
@@ -19,27 +24,37 @@ export const websiteConfig = {
     {
       headline: 'Instalacje Elektryczne',
       text: 'Instalacje elektryczne i teletechniczne w budynkach przemysłowych, usługowych, administracyjnych, hotelach jak i w budownictwie indywidualnym.',
+      link: 'instalacje-elektryczne',
       icon: workerIcon,
+      image: electricalInstallationsPhoto,
     },
     {
       headline: 'Instalacje Fotowoltaiczne',
       text: 'Instalacja fotowoltaiczna to prosty sposób na oszczędności związane z zużyciem energii elektrycznej dla zakładu przemysłowego jak i domu rodzinnego.',
+      link: 'instalacje-fotowoltaiczne',
       icon: powerPlantIcon,
+      image: photovoltaicInstallationsPhoto,
     },
     {
       headline: 'Kompensacje Mocy Biernej',
       text: 'Naszą główną domeną jest projektowanie i budowanie szytych na miarę urządzeń do kompensacji mocy biernej.',
+      link: 'kompensacje-mocy-biernej',
       icon: factoryIcon,
+      image: reactivePowerCompensationPhoto,
     },
     {
       headline: 'Pomiary',
       text: 'Pomiary elektryczne ochrony od porażeń bieżące, odbiorcze, okresowe 5 letnie, eksploatacyjne oraz analiza sieci.',
+      link: 'pomiary',
       icon: voltmeterIcon,
+      image: measurementPhoto,
     },
     {
       headline: 'Automatyka',
       text: 'Pomiary elektryczne ochrony od porażeń bieżące, odbiorcze, okresowe 5 letnie, eksploatacyjne oraz analiza sieci.',
+      link: 'automatyka',
       icon: robotIcon,
+      image: automationPhoto,
     },
   ],
   realizations: [
@@ -54,6 +69,7 @@ export const websiteConfig = {
         'Pomiar sieci',
         'Wykonanie sterowania',
       ],
+      category: ['pomiary', 'instalacje-elektryczne', 'automatyka'],
     },
     {
       id: 2,
