@@ -60,7 +60,7 @@ export const Footer: React.FC<{ children?: React.ReactNode }> = ({
               <ul className="space-y-2 flex flex-col items-center">
                 {websiteConfig.navigation.map((navigation, _) => (
                   <li key={_}>
-                    <Link href={navigation.link} className="flex gap-4">
+                    <Link href={`/${navigation.link}`} className="flex gap-4">
                       <Typography.Span className="text-[#9A9A9A] underline">
                         {navigation.name}
                       </Typography.Span>
