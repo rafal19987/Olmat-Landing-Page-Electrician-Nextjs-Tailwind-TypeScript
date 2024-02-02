@@ -28,7 +28,7 @@ export const DesktopMenuItem: React.FC<{
               before:-bottom-2
               before:w-0
               before:h-[2px]
-              before:bg-primary
+              before:bg-sky-500
               before:hover:w-full
               before:transition-all
               before:duration-500
@@ -37,7 +37,7 @@ export const DesktopMenuItem: React.FC<{
               after:-bottom-1
               after:w-0
               after:h-[2px]
-              after:bg-primary
+              after:bg-sky-500
               after:hover:w-full
               after:transition-all
               after:duration-500

@@ -24,7 +24,7 @@ export default function UsługaItem({
   return (
     <SectionWrapper className="flex flex-col">
       <NavigationButton
-        name="Powrót do realizacji"
+        name="Powrót do usług"
         route={websiteConfig.navigation[2].link}
         className="flex gap-4 items-center self-end"
       >

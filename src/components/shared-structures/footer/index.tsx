@@ -110,13 +110,13 @@ export const Footer: React.FC<{ children?: React.ReactNode }> = ({
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-3 w-dvw py-8 border-t border-[#9A9A9A] lg:flex-row lg:justify-around">
+      <div className="flex flex-col items-center gap-3 w-dvw py-4 border-t border-[#9A9A9A] lg:flex-row lg:justify-around">
         <Typography.Span className="text-center text-sm text-[#9A9A9A] tracking-wider">
           Copyright ©{new Date().getFullYear()}
         </Typography.Span>
-        <Typography.Span className="text-center text-sm text-[#9A9A9A] tracking-wider">
+        {/* <Typography.Span className="text-center text-sm text-[#9A9A9A] tracking-wider">
           Strona zaprojektowana przez Rafał Izdebski
-        </Typography.Span>
+        </Typography.Span> */}
       </div>
     </footer>
   );

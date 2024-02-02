@@ -21,7 +21,7 @@ export default function ServicesPage() {
         <Typography.H3 className="self-start">
           Usługi elektryczne w naszej ofercie:
         </Typography.H3>
-        <ul className="grid grid-cols-1 gap-6 place-items-center pl-8 lg:grid-cols-3  lg:ml-0 lg:w-fit list-disc">
+        <ul className="grid grid-cols-1 gap-6 place-items-center pl-8 lg:flex lg:flex-col lg:self-start  lg:ml-0 lg:w-fit list-disc">
           {websiteConfig.services.map((service, idx) => (
             <li className="w-full" key={idx}>
               <Link className="text-red-500" href={`/uslugi/${service.link}`}>

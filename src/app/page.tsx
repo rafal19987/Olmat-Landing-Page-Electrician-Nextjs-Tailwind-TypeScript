@@ -168,7 +168,7 @@ const RealizationsSection = () => {
             (realization, idx) =>
               idx < 3 && (
                 <li
-                  className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                  className="flex flex-col gap-6 items-center justify-between px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
                   key={idx}
                 >
                   <Typography.H4 className="text-center">
@@ -186,11 +186,8 @@ const RealizationsSection = () => {
                       ? `${realization.text.slice(0, 120)} (...)`
                       : realization.text}
                   </Typography.Paragraph>
-                  <button className="bg-primary px-4 py-3 rounded-md">
-                    <Link
-                      className="text-secondary"
-                      href={`/realizacje/${realization.link}`}
-                    >
+                  <button className="bg-primary px-4 py-3 rounded-md text-secondary hover:bg-cyan-900 hover:text-white hover:transition-colors">
+                    <Link href={`/realizacje/${realization.link}`}>
                       Czytaj więcej
                     </Link>
                   </button>
