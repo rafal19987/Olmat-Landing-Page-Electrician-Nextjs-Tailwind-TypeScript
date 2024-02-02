@@ -14,7 +14,7 @@ export const NavigationButton: React.FC<{
   return (
     <button
       className={cn('', className)}
-      onClick={() => router.push(`/${route}`)}
+      onClick={() => (route ? router.push(`/${route}`) : router.back())}
     >
       {children}
       {name}

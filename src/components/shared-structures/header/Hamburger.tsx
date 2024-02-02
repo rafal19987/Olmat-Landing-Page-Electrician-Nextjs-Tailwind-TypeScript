@@ -6,7 +6,7 @@ export const Hamburger: React.FC<{
   return (
     <div
       onClick={clickHandle}
-      className="flex flex-col items-center justify-evenly w-8 h-8 bg-slate-500 rounded-sm  hover:cursor-pointer lg:hidden"
+      className="flex flex-col items-center justify-evenly w-10 h-8 bg-gradient-to-b from-[#1A718C]/90 to-[#1A718C]/90 rounded-sm  hover:cursor-pointer lg:hidden"
     >
       {isOpen ? (
         <>

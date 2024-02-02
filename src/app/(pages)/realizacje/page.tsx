@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
+import { PageHeadline } from '@/components/shared-atoms/PageHeadline';
 
 export default function RealizationsPage() {
   return (
     <SectionWrapper>
-      <SectionHeadline headline="Nasze realizacje" />
+      <PageHeadline headline="Nasze realizacje" />
       <div className="space-y-1">
         <Typography.Paragraph>
           Wykonujemy prace montażowe, remontowe i modernizacyjne związane z

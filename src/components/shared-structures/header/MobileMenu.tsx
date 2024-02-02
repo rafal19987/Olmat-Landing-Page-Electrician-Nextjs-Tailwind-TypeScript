@@ -9,7 +9,7 @@ export const MobileMenu: React.FC<{
 }> = ({ children, isOpen, setIsOpen }) => {
   return (
     <div
-      className={`absolute left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-screen bg-black z-50 translate-x-0 transition-transform duration-500 lg:hidden ${
+      className={`absolute left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-screen bg-white z-50 translate-x-0 transition-transform duration-500 lg:hidden ${
         !isOpen && 'translate-x-full'
       }`}
     >
@@ -19,11 +19,11 @@ export const MobileMenu: React.FC<{
             <li className="h-12 w-4/6" key={_}>
               <Link
                 href={`/${navItem.link}`}
-                className="flex items-center justify-center w-full h-full"
+                className="flex items-center justify-center w-full h-full text-sky-500 border-b border-sky-300"
                 onClick={() => setIsOpen(false)}
                 replace
               >
-                <span className="">{navItem.name}</span>
+                <span className="text-xl">{navItem.name}</span>
               </Link>
             </li>
           ))}
