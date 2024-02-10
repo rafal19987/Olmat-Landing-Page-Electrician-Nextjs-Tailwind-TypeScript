@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
+import { RealizationCard } from '@/components/shared-structures/RealizationCard';
 import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import mainPhoto from '@/assets/images/main-photo.jpg';
@@ -167,31 +168,13 @@ const RealizationsSection = () => {
           {websiteConfig.realizations.map(
             (realization, idx) =>
               idx < 3 && (
-                <li
-                  className="flex flex-col gap-6 items-center justify-between px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                <RealizationCard
+                  headline={realization.headline}
+                  link={realization.link}
+                  photo={realization.photo}
+                  text={realization.text}
                   key={idx}
-                >
-                  <Typography.H4 className="text-center">
-                    {realization.headline}
-                  </Typography.H4>
-
-                  <Image
-                    className="ml-0 w-full rounded-lg"
-                    src={realization.photo}
-                    alt={realization.headline}
-                    aria-description={realization.headline}
-                  />
-                  <Typography.Paragraph>
-                    {realization.text.length > 120
-                      ? `${realization.text.slice(0, 120)} (...)`
-                      : realization.text}
-                  </Typography.Paragraph>
-                  <button className="bg-primary px-4 py-3 rounded-md text-secondary hover:bg-cyan-900 hover:text-white hover:transition-colors">
-                    <Link href={`/realizacje/${realization.link}`}>
-                      Czytaj więcej
-                    </Link>
-                  </button>
-                </li>
+                />
               )
           )}
         </ul>
