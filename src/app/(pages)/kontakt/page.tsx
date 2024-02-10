@@ -4,7 +4,6 @@ import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import { PageHeadline } from '@/components/shared-atoms/PageHeadline';
-import { Logo } from '@/components/shared-atoms/Logo';
 
 export default function ContactPage() {
   return (
@@ -17,7 +16,7 @@ export default function ContactPage() {
           skontaktujemy się z Tobą w ciągu 24 godzin.
         </Typography.Paragraph>
         <div className="flex flex-col md:flex-row justify-between w-full md:max-w-[800px]">
-          <div className="w-full md:w-1/2 flex flex-col items-center justify-between space-y-1 border-x border-b md:border-x-0 md:border-b-0 md:border-y md:border-r-2 p-8">
+          <div className="w-full md:w-1/2 flex flex-col items-center justify-between space-y-1 border-x border-b md:border-x-0 md:border-y md:border-r p-8">
             <ul className="space-y-2 flex flex-col items-center justify-center h-full">
               <li>
                 <Typography.Span>
@@ -69,7 +68,7 @@ export default function ContactPage() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-6 w-full h-full">
-          <Typography.Paragraph>Nasze usługi</Typography.Paragraph>
+          <Typography.H3>Nasze usługi</Typography.H3>
           <ul className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 w-full">
             {websiteConfig.services.map((service) => (
               <li
