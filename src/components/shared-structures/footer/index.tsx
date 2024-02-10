@@ -42,7 +42,11 @@ export const Footer: React.FC<{ children?: React.ReactNode }> = ({
             <ul className="flex gap-9 justify-center items-center">
               {websiteConfig.data.contactInfo.map((contact, _) => (
                 <li key={_}>
-                  <Link href={contact.link} className="flex gap-4">
+                  <Link
+                    href={contact.link}
+                    className="flex gap-4"
+                    aria-label={contact.label}
+                  >
                     <Image src={contact.icon} alt="" aria-hidden />
                   </Link>
                 </li>
