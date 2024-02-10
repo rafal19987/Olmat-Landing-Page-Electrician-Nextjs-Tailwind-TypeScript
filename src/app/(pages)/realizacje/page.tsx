@@ -1,9 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import { PageHeadline } from '@/components/shared-atoms/PageHeadline';
+import { RealizationCard } from '@/components/shared-structures/RealizationCard';
 
 export default function RealizationsPage() {
   return (
@@ -21,34 +20,13 @@ export default function RealizationsPage() {
         </Typography.H3>
         <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit">
           {websiteConfig.realizations.map((realization, idx) => (
-            <li
-              className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+            <RealizationCard
+              headline={realization.headline}
+              link={realization.link}
+              photo={realization.photo}
+              text={realization.text}
               key={idx}
-            >
-              <Typography.H4 className="text-center">
-                {realization.headline}
-              </Typography.H4>
-
-              <Image
-                className="ml-0 w-full rounded-lg"
-                src={realization.photo}
-                alt={realization.headline}
-                aria-description={realization.headline}
-              />
-              <Typography.Paragraph>
-                {realization.text.length > 120
-                  ? `${realization.text.slice(0, 120)} (...)`
-                  : realization.text}
-              </Typography.Paragraph>
-              <button className="bg-primary px-4 py-3 rounded-md">
-                <Link
-                  className="text-secondary"
-                  href={`/realizacje/${realization.link}`}
-                >
-                  Czytaj więcej
-                </Link>
-              </button>
-            </li>
+            />
           ))}
         </ul>
       </div>
