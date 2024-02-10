@@ -139,16 +139,20 @@ export const websiteConfig = {
     profilePhoto: profilePhoto,
     contactInfo: [
       {
+        label: 'Adres email do kontaktu mateuszolifirowicz@gmail.com',
         description: 'mateuszolifirowicz@gmail.com',
         link: 'mateuszolifirowicz@gmail.com',
         icon: emailIcon,
       },
       {
+        label: 'Number telefonu do kontaktu 517-788-363',
         description: '517-788-363',
         link: '517788363',
         icon: phoneIcon,
       },
       {
+        label:
+          'Przejście do profilu Mateusza Olifirowiczna na portalu LinkedIn',
         description: 'LinkedIn',
         link: '#',
         icon: linkedInIcon,
