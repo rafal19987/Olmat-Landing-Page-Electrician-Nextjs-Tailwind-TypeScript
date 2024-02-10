@@ -9,12 +9,12 @@ export const MobileMenu: React.FC<{
 }> = ({ children, isOpen, setIsOpen }) => {
   return (
     <div
-      className={`absolute left-0 top-[var(--header-height)] h-[calc(100vh-var(--header-height))] w-screen bg-white z-50 translate-x-0 transition-transform duration-500 lg:hidden ${
+      className={`absolute right-0 top-[var(--header-height)] h-[calc(40vh)] w-1/2 bg-white z-50 translate-x-0 transition-transform duration-500 lg:hidden ${
         !isOpen && 'translate-x-full'
       }`}
     >
       <nav className="w-full h-full p-8">
-        <ul className="flex flex-col gap-8 items-center justify-evenly w-full h-full">
+        <ul className="flex flex-col gap-2 items-center justify-evenly w-full h-full">
           {websiteConfig.navigation.map((navItem, _) => (
             <li className="h-12 w-4/6" key={_}>
               <Link
