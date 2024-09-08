@@ -6,15 +6,15 @@ import powerPlantIcon from '@/assets/svg/power-plant.svg';
 import emailIcon from '@/assets/svg/email.svg';
 import phoneIcon from '@/assets/svg/phone.svg';
 import linkedInIcon from '@/assets/svg/linkedIn.svg';
-import firstPhoto from '@/assets/images/1.png';
-import secondPhoto from '@/assets/images/2.png';
-import thirdPhoto from '@/assets/images/3.png';
-import profilePhoto from '@/assets/images/mateusz-olifirowicz-profile.png';
-import electricalInstallationsPhoto from '@/assets/images/instalacje-elektryczne.jpg';
-import photovoltaicInstallationsPhoto from '@/assets/images/instalacje-fotowoltaiczne.jpg';
-import reactivePowerCompensationPhoto from '@/assets/images/kompensacje-mocy-biernej.jpg';
-import measurementPhoto from '@/assets/images/pomiary.jpg';
-import automationPhoto from '@/assets/images/automatyka.jpg';
+import firstPhoto from '@/assets/images/1.webp';
+import secondPhoto from '@/assets/images/2.webp';
+import thirdPhoto from '@/assets/images/3.webp';
+import profilePhoto from '@/assets/images/mateusz-olifirowicz-profile.webp';
+import electricalInstallationsPhoto from '@/assets/images/instalacje-elektryczne.webp';
+import photovoltaicInstallationsPhoto from '@/assets/images/instalacje-fotowoltaiczne.webp';
+import reactivePowerCompensationPhoto from '@/assets/images/kompensacje-mocy-biernej.webp';
+import measurementPhoto from '@/assets/images/pomiary.webp';
+import automationPhoto from '@/assets/images/automatyka.webp';
 
 export const websiteConfig = {
   title: 'OLMAT | Mateusz Olifirowicz',
