@@ -22,24 +22,30 @@ export default function UsługaItem({
   );
 
   return (
-    <SectionWrapper className="flex flex-col">
+    <SectionWrapper className='flex flex-col'>
       <NavigationButton
-        name="Powrót do usług"
+        name='Powrót do usług'
         route={websiteConfig.navigation[2].link}
-        className="flex gap-4 items-center self-end"
+        className='flex gap-4 items-center self-end'
       >
-        <Image className="rotate-180" src={rightArrowIcon} alt="" aria-hidden />
+        <Image className='rotate-180' src={rightArrowIcon} alt='' aria-hidden />
       </NavigationButton>
 
       <SectionHeadline
-        className="after:left-0 after:w-full text-center"
+        className='after:left-0 after:w-full text-center'
         headline={service.headline}
       />
-      <Image src={service.image} alt="" priority placeholder="blur" />
-      <div className="space-y-1">
+      <Image
+        src={service.image}
+        alt=''
+        priority
+        placeholder='blur'
+        className='max-h-[30dvw] object-cover object-top'
+      />
+      <div className='space-y-1'>
         <Typography.Paragraph>{service.text}</Typography.Paragraph>
       </div>
-      <div className="space-y-8">
+      <div className='space-y-8'>
         {/* <Typography.H3>Zakres prowadzonych przez Nas prac:</Typography.H3> */}
         {/* <ul className="space-y-4">
           {realization.workScope?.map((work, _) => (
@@ -53,24 +59,24 @@ export default function UsługaItem({
           ))}
         </ul> */}
       </div>
-      <div className="space-y-8 lg:flex lg:flex-col lg:items-center">
+      <div className='space-y-8 lg:flex lg:flex-col lg:items-center'>
         {realizationsOfService.length > 0 && (
           <>
-            <h2 className="text-xl font-bold leading-6">
+            <h2 className='text-xl font-bold leading-6'>
               Przykładowe realizacje:
             </h2>
-            <ul className="grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit">
+            <ul className='grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit'>
               {realizationsOfService.map((realization, idx) => (
                 <li
-                  className="flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md"
+                  className='flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md'
                   key={idx}
                 >
-                  <Typography.H4 className="text-center">
+                  <Typography.H4 className='text-center'>
                     {realization.headline}
                   </Typography.H4>
 
                   <Image
-                    className="ml-0 w-full rounded-lg"
+                    className='ml-0 w-full rounded-lg'
                     src={realization.photo}
                     alt={realization.headline}
                     aria-description={realization.headline}
@@ -80,9 +86,9 @@ export default function UsługaItem({
                       ? `${realization.text.slice(0, 120)} (...)`
                       : realization.text}
                   </Typography.Paragraph>
-                  <button className="bg-primary px-4 py-3 rounded-md">
+                  <button className='bg-primary px-4 py-3 rounded-md'>
                     <Link
-                      className="text-secondary"
+                      className='text-secondary'
                       href={`/realizacje/${realization.link}`}
                     >
                       Czytaj więcej
