@@ -4,14 +4,16 @@ import { NavigationButton } from '@/components/shared-atoms/NavigationButton';
 import { SectionHeadline } from '@/components/shared-atoms/SectionHeadline';
 import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
+import { RealizationCard } from '@/components/shared-structures/RealizationCard';
 import { websiteConfig } from '@/websiteConfig';
 import rightArrowIcon from '@/assets/svg/right-arrow.svg';
 import Link from 'next/link';
+import { Category } from '@/types';
 
 export default function UsługaItem({
   params: { usluga },
 }: {
-  params: { usluga: string };
+  params: { usluga: Category };
 }) {
   const service = websiteConfig.services.filter((el) => el.link === usluga)[0];
 
@@ -40,7 +42,7 @@ export default function UsługaItem({
         alt=''
         priority
         placeholder='blur'
-        className='max-h-[30dvw] object-cover object-top'
+        className='lg:max-h-[30dvw] object-cover object-top'
       />
       <div className='space-y-1'>
         <Typography.Paragraph>{service.text}</Typography.Paragraph>
@@ -67,34 +69,35 @@ export default function UsługaItem({
             </h2>
             <ul className='grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit'>
               {realizationsOfService.map((realization, idx) => (
-                <li
-                  className='flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md'
-                  key={idx}
-                >
-                  <Typography.H4 className='text-center'>
-                    {realization.headline}
-                  </Typography.H4>
+                <RealizationCard realization={realization} key={idx} />
+                // <li
+                //   className='flex flex-col gap-6 items-center px-4 py-8 max-w-[var(--max-card-width)] min-h-32 h-full bg-secondary bg-opacity-75 rounded-md'
+                //   key={idx}
+                // >
+                //   <Typography.H4 className='text-center'>
+                //     {realization.headline}
+                //   </Typography.H4>
 
-                  <Image
-                    className='ml-0 w-full rounded-lg'
-                    src={realization.photo}
-                    alt={realization.headline}
-                    aria-description={realization.headline}
-                  />
-                  <Typography.Paragraph>
-                    {realization.text.length > 120
-                      ? `${realization.text.slice(0, 120)} (...)`
-                      : realization.text}
-                  </Typography.Paragraph>
-                  <button className='bg-primary px-4 py-3 rounded-md'>
-                    <Link
-                      className='text-secondary'
-                      href={`/realizacje/${realization.link}`}
-                    >
-                      Czytaj więcej
-                    </Link>
-                  </button>
-                </li>
+                //   <Image
+                //     className='ml-0 w-full rounded-lg'
+                //     src={realization.photo}
+                //     alt={realization.headline}
+                //     aria-description={realization.headline}
+                //   />
+                //   <Typography.Paragraph>
+                //     {realization.text.length > 120
+                //       ? `${realization.text.slice(0, 120)} (...)`
+                //       : realization.text}
+                //   </Typography.Paragraph>
+                //   <button className='bg-primary px-4 py-3 rounded-md'>
+                //     <Link
+                //       className='text-secondary'
+                //       href={`/realizacje/${realization.link}`}
+                //     >
+                //       Czytaj więcej
+                //     </Link>
+                //   </button>
+                // </li>
               ))}
             </ul>
           </>
@@ -102,4 +105,10 @@ export default function UsługaItem({
       </div>
     </SectionWrapper>
   );
+}
+
+export async function generateStaticParams() {
+  return websiteConfig.services.map((service) => ({
+    slug: service.link,
+  }));
 }

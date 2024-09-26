@@ -15,8 +15,9 @@ import photovoltaicInstallationsPhoto from '@/assets/images/instalacje-fotowolta
 import reactivePowerCompensationPhoto from '@/assets/images/kompensacje-mocy-biernej.webp';
 import measurementPhoto from '@/assets/images/pomiary.webp';
 import automationPhoto from '@/assets/images/automatyka.webp';
+import { type WebsiteConfig } from '@/types';
 
-export const websiteConfig = {
+export const websiteConfig: WebsiteConfig = {
   title: 'OLMAT | Mateusz Olifirowicz',
   description:
     'Usługi elektryczne Mateusz Olifirowicz "OLMAT". Kompensacja mocy biernej.',
@@ -60,7 +61,7 @@ export const websiteConfig = {
   realizations: [
     {
       id: 1,
-      headline: 'Sterownia przepompowni "Chiechanów"',
+      headline: 'Sterownia przepompowni "Ciechanów"',
       text: 'Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego. Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego. Inwestycja realizowana dla przepompowni “Ciechanów”. Zakres prac obejmował montaż oraz konfigurację głównego bloku sterownicznego.',
       photo: firstPhoto,
       link: 'sterownia-przepompowni-ciechanow',

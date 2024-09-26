@@ -4,20 +4,21 @@ import { SectionWrapper } from '@/components/shared-atoms/SectionWrapper';
 import * as Typography from '@/components/Typography';
 import { websiteConfig } from '@/websiteConfig';
 import { PageHeadline } from '@/components/shared-atoms/PageHeadline';
+import { ServiceCard } from '@/components/shared-structures/ServiceCard';
 
 export default function ContactPage() {
   return (
-    <SectionWrapper className=" ">
-      <PageHeadline headline="Kontakt" />
-      <div className="flex flex-col gap-8 items-center ">
-        <Typography.Paragraph className="self-center text-center max-w-[600px]">
+    <SectionWrapper className=' '>
+      <PageHeadline headline='Kontakt' />
+      <div className='flex flex-col gap-8 items-center '>
+        <Typography.Paragraph className='self-center text-center max-w-[600px]'>
           Jeśli masz jakieś pytania, o których chcesz z nami porozmawiać,
           zadzwoń do nas lub skorzystaj z naszego formularza kontaktowego, a my
           skontaktujemy się z Tobą w ciągu 24 godzin.
         </Typography.Paragraph>
-        <div className="flex flex-col md:flex-row justify-between w-full md:max-w-[800px]">
-          <div className="w-full md:w-1/2 flex flex-col items-center justify-between space-y-1 border-x border-b md:border-x-0 md:border-y md:border-r p-8">
-            <ul className="space-y-2 flex flex-col items-center justify-center h-full">
+        <div className='flex flex-col md:flex-row justify-between w-full md:max-w-[800px]'>
+          <div className='w-full md:w-1/2 flex flex-col items-center justify-between space-y-1 border-x border-b md:border-x-0 md:border-y md:border-r p-8'>
+            <ul className='space-y-2 flex flex-col items-center justify-center h-full'>
               <li>
                 <Typography.Span>
                   {websiteConfig.data.companyInfo.companyName}
@@ -46,10 +47,10 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-          <div className="flex items-center gap-3 flex-col border-x w-full md:w-1/2 md:border-x-0  md:border-y p-8">
+          <div className='flex items-center gap-3 flex-col border-x w-full md:w-1/2 md:border-x-0  md:border-y p-8'>
             <Image
               src={websiteConfig.data.profilePhoto}
-              alt="Mateusz Olifirowicz fotografia"
+              alt='Mateusz Olifirowicz fotografia'
               priority
             />
             <Typography.Paragraph>Mateusz Olifirowicz</Typography.Paragraph>
@@ -57,32 +58,21 @@ export default function ContactPage() {
             {websiteConfig.data.contactInfo.map((contact, idx) => (
               <Link
                 href={contact.link}
-                className="flex gap-2 hover:underline"
+                className='flex gap-2 hover:underline'
                 key={idx}
               >
-                <Image src={contact.icon} alt="" aria-hidden />
+                <Image src={contact.icon} alt='' aria-hidden />
                 <Typography.Span>{contact.description}</Typography.Span>
               </Link>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-6 w-full h-full">
+        <div className='flex flex-col items-center justify-between gap-6 w-full h-full'>
           <Typography.H3>Nasze usługi</Typography.H3>
-          <ul className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 w-full">
-            {websiteConfig.services.map((service) => (
-              <li
-                className="flex items-center gap-4 w-full md:w-fit  max-w-[370px] group"
-                key={service.headline}
-              >
-                <Link
-                  className="flex items-center gap-4 w-full h-full px-4 py-2 border group-hover:border-sky-500 transition-colors"
-                  href={`/uslugi/${service.link}`}
-                >
-                  <Image src={service.icon} width={50} alt="" aria-hidden />
-                  {service.headline}
-                </Link>
-              </li>
+          <ul className='flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 w-full'>
+            {websiteConfig.services.map((service, _) => (
+              <ServiceCard key={_} service={service} variant='simple' />
             ))}
           </ul>
         </div>

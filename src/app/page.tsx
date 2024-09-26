@@ -8,6 +8,7 @@ import { websiteConfig } from '@/websiteConfig';
 import mainPhoto from '@/assets/images/main-photo.webp';
 import rightArrowIcon from '@/assets/svg/right-arrow.svg';
 import cropArchitectOpeningBlueprint from '@/assets/images/crop-architect-opening-blueprint.webp';
+import { ServiceCard } from '@/components/shared-structures/ServiceCard';
 
 export default function Home() {
   return (
@@ -121,27 +122,7 @@ const ServicesSection = () => {
         <Typography.H3>Jakie usługi oferujemy?</Typography.H3>
         <ul className='flex flex-col gap-12 md:justify-center md:items-center lg:flex-wrap lg:flex-row '>
           {websiteConfig.services.map((service, _) => (
-            <li
-              className='flex flex-col gap-8 items-center justify-between px-4 py-8 md:max-w-[var(--max-card-width)] min-h-64  transition duration-300 rounded-md border border-primary lg:self-stretch lg:w-96 lg:gap-6 lg:min-w-[96px] lg:border-secondary hover:border-primary'
-              key={_}
-            >
-              <div className='flex flex-col items-center justify-center gap-8 w-full lg:flex-row lg:items-center  lg:gap-4'>
-                <Image src={service.icon} width={50} alt='' aria-hidden />
-                <Typography.H4>{service.headline}</Typography.H4>
-              </div>
-              <Typography.Paragraph className='text-center lg:text-start lg:text-base'>
-                {service.text}
-              </Typography.Paragraph>
-
-              <button className='bg-primary px-4 py-3 rounded-md text-secondary hover:bg-cyan-900 hover:text-white hover:transition-colors'>
-                <Link
-                  className='text-secondary'
-                  href={`/uslugi/${service.link}`}
-                >
-                  Czytaj więcej
-                </Link>
-              </button>
-            </li>
+            <ServiceCard key={_} service={service} />
           ))}
         </ul>
       </div>
@@ -164,18 +145,10 @@ const RealizationsSection = () => {
           Jakie inwestycje ukończyliśmy w ostatnim czasie?
         </Typography.H3>
 
-        <ul className='grid grid-cols-1 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit'>
+        <ul className='grid grid-cols-1 md:grid-cols-2 gap-6 -ml-4 w-screen place-items-center lg:grid-cols-3  lg:ml-0 lg:w-fit'>
           {websiteConfig.realizations.map(
             (realization, idx) =>
-              idx < 3 && (
-                <RealizationCard
-                  headline={realization.headline}
-                  link={realization.link}
-                  photo={realization.photo}
-                  text={realization.text}
-                  key={idx}
-                />
-              )
+              idx < 3 && <RealizationCard realization={realization} key={idx} />
           )}
         </ul>
       </div>
